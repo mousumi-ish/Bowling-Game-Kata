@@ -1,5 +1,6 @@
 import { bowlingScore } from "./bowling";
 import { Frame } from "./bowling";
+import { totalScore } from "./bowling";
 describe("Gutter game", () => {
   test("it will return an error msg for all 0 values", () => {
     const inputRolls = [
@@ -29,4 +30,22 @@ test("it should return the sum of the rolls", () => {
   const frameScore = Frame(rollOne, rollTwo);
 
   expect(frameScore).toBe(5);
+});
+describe("bowlingScoreCard function", () => {
+  test("it should correct scorecard when no strikes/spares", () => {
+    const frames = [
+      [1, 1],
+      [1, 1],
+      [1, 1],
+      [1, 1],
+      [1, 1],
+      [1, 1],
+      [1, 1],
+      [1, 1],
+      [1, 1],
+      [1, 1],
+    ];
+    const scoreCard = totalScore(frames);
+    expect(scoreCard).toBe("2222222222");
+  });
 });
