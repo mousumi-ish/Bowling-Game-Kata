@@ -9,7 +9,7 @@ describe("Gutter game", () => {
     expect(score).toBe(0); //ASSERT
   });
 });
-test("It should return strike if the value of first roll is 10", () => {
+test("It should return strike sign X if the value of first roll is 10", () => {
   const rollOne = 10;
   const rollTwo = 0;
   const score = Frame(rollOne, rollTwo);
@@ -21,4 +21,12 @@ test("it should return the / sign if the players hit a spare", () => {
 
   const score = Frame(rollOne, rollTwo);
   expect(score).toBe("/");
+});
+test("it should return the sum of the rolls", () => {
+  const rollOne = 3;
+  const rollTwo = 2;
+
+  const frameScore = Frame(rollOne, rollTwo);
+
+  expect(frameScore).toBe(5);
 });
