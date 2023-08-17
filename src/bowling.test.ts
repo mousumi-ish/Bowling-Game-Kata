@@ -15,3 +15,10 @@ test("It should return strike if the value of first roll is 10", () => {
   const score = Frame(rollOne, rollTwo);
   expect(score).toBe("X");
 });
+test("it should return the / sign if the players hit a spare", () => {
+  const rollOne = 7;
+  const rollTwo = 3;
+
+  const score = Frame(rollOne, rollTwo);
+  expect(score).toBe("/");
+});

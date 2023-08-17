@@ -6,5 +6,8 @@ export const Frame = (rollOne: number, rollTwo: number) => {
   if (score > 10) {
     return " Invalid input";
   }
-  if (rollOne === 10) return "X";
+  if (rollOne === 10) {
+    return "X";
+  }
+  return score === 10 ? "/" : score;
 };
