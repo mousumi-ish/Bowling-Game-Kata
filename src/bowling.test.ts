@@ -49,3 +49,33 @@ describe("bowlingScoreCard function", () => {
     expect(scoreCard).toBe("2222222222");
   });
 });
+test("it should correctly display the score with a spare", () => {
+  const score = totalScore([
+    [2, 2],
+    [1, 1],
+    [5, 5],
+    [1, 1],
+    [7, 3],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+    [1, 1],
+  ]);
+  expect(score).toBe("42/2/22222");
+});
+test("it should correctly display the score with a strike", () => {
+  const score = totalScore([
+    [3, 1],
+    [1, 4],
+    [10, 0],
+    [2, 1],
+    [1, 8],
+    [3, 1],
+    [7, 1],
+    [1, 2],
+    [7, 1],
+    [2, 1],
+  ]);
+  expect(score).toBe("45X3948383");
+});
